@@ -1,3 +1,5 @@
+faça as colunas dos cards com 4 cards por coluna e não 3, e não corte parte da imagem no card
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -129,7 +131,7 @@ header{
 
 .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    grid-template-columns:repeat(4, 1fr);
     gap:30px;
 }
 
@@ -147,7 +149,8 @@ header{
 .card img{
     width:100%;
     height:260px;
-    object-fit:cover;
+    object-fit:contain;
+    background:#fff;
 }
 
 .card-content{
@@ -223,7 +226,18 @@ footer p{
     color:#86868b;
 }
 
+@media(max-width:1200px){
+.grid{
+    grid-template-columns:repeat(3, 1fr);
+}
+}
+
 @media(max-width:900px){
+
+.grid{
+    grid-template-columns:repeat(2, 1fr);
+}
+
 
 .feature{
     grid-template-columns:1fr;
@@ -235,6 +249,13 @@ footer p{
 
 .section-title h2{
     font-size:42px;
+}
+
+
+@media(max-width:600px){
+.grid{
+    grid-template-columns:1fr;
+}
 }
 
 }
