@@ -140,6 +140,9 @@ header{
     border-radius:30px;
     overflow:hidden;
     transition:.4s;
+    display:flex;
+    flex-direction:column;
+    border: solid #1c1c1e 1px;
 }
 
 .card:hover{
@@ -150,11 +153,16 @@ header{
     width:100%;
     height:260px;
     object-fit:contain;
+    object-position:center;
     background:#fff;
+    padding:15px;
 }
 
 .card-content{
     padding:35px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
 }
 
 .card h3{
@@ -165,6 +173,7 @@ header{
 .card p{
     color:#6e6e73;
     line-height:1.7;
+    flex-grow:1;
 }
 
 .price{
@@ -226,38 +235,35 @@ footer p{
     color:#86868b;
 }
 
+
 @media(max-width:1200px){
-.grid{
-    grid-template-columns:repeat(3, 1fr);
-}
+    .grid{
+        grid-template-columns:repeat(4,1fr);
+    }
 }
 
 @media(max-width:900px){
+    .grid{
+        grid-template-columns:repeat(2,1fr);
+    }
 
-.grid{
-    grid-template-columns:repeat(2, 1fr);
+    .feature{
+        grid-template-columns:1fr;
+    }
+
+    .feature h2{
+        font-size:52px;
+    }
+
+    .section-title h2{
+        font-size:42px;
+    }
 }
-
-
-.feature{
-    grid-template-columns:1fr;
-}
-
-.feature h2{
-    font-size:52px;
-}
-
-.section-title h2{
-    font-size:42px;
-}
-
 
 @media(max-width:600px){
-.grid{
-    grid-template-columns:1fr;
-}
-}
-
+    .grid{
+        grid-template-columns:1fr;
+    }
 }
 
 </style>
