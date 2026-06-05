@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intorium</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#ffffff;
+    color:#1d1d1f;
+    overflow-x:hidden;
+}
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    backdrop-filter:blur(20px);
+    background:rgba(255,255,255,.8);
+    border-bottom:1px solid #e5e5e5;
+    z-index:999;
+}
+
+.nav{
+    max-width:1400px;
+    margin:auto;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:700;
+}
+
+.nav a{
+    text-decoration:none;
+    color:#1d1d1f;
+    margin-left:25px;
+    font-size:14px;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:120px 20px 80px;
+    background:
+    radial-gradient(circle at top,#dfe9ff 0%,#ffffff 60%);
+}
+
+.hero h1{
+    font-size:clamp(48px,8vw,110px);
+    font-weight:800;
+    letter-spacing:-3px;
+}
+
+.hero p{
+    max-width:850px;
+    margin-top:25px;
+    font-size:24px;
+    color:#6e6e73;
+    line-height:1.5;
+}
+
+.hero-buttons{
+    margin-top:40px;
+}
+
+.btn{
+    display:inline-block;
+    padding:16px 34px;
+    border-radius:999px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:#0071e3;
+    color:white;
+}
+
+.btn-primary:hover{
+    background:#0062c5;
+}
+
+.btn-secondary{
+    border:1px solid #0071e3;
+    color:#0071e3;
+    margin-left:15px;
+}
+
+.section{
+    padding:120px 8%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.section-title h2{
+    font-size:56px;
+    margin-bottom:15px;
+}
+
+.section-title p{
+    color:#6e6e73;
+    font-size:20px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:30px;
+}
+
+.card{
+    background:#f5f5f7;
+    border-radius:30px;
+    overflow:hidden;
+    transition:.4s;
+    display:flex;
+    flex-direction:column;
+    border: solid #1c1c1e 1px;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    height:260px;
+    object-fit:contain;
+    object-position:center;
+    background:#fff;
+    padding:15px;
+}
+
+.card-content{
+    padding:35px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+}
+
+.card h3{
+    font-size:30px;
+    margin-bottom:12px;
+}
+
+.card p{
+    color:#6e6e73;
+    line-height:1.7;
+    flex-grow:1;
+}
+
+.price{
+    margin-top:20px;
+    font-size:24px;
+    font-weight:700;
+}
+
+.dark{
+    background:#000;
+    color:#fff;
+}
+
+.dark .section-title p{
+    color:#a1a1a6;
+}
+
+.dark .card{
+    background:#1c1c1e;
+}
+
+.dark .card p{
+    color:#b5b5b7;
+}
+
+.feature{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+    max-width:1400px;
+    margin:auto;
+}
+
+.feature h2{
+    font-size:72px;
+    line-height:1;
+    margin-bottom:20px;
+}
+
+.feature p{
+    font-size:22px;
+    color:#86868b;
+    line-height:1.6;
+}
+
+.feature img{
+    width:100%;
+    border-radius:30px;
+}
+
+footer{
+    padding:60px 20px;
+    text-align:center;
+    border-top:1px solid #e5e5e5;
+}
+
+footer p{
+    color:#86868b;
+}
+
+
+@media(max-width:1200px){
+    .grid{
+        grid-template-columns:repeat(4,1fr);
+    }
+}
+
+@media(max-width:900px){
+    .grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .feature{
+        grid-template-columns:1fr;
+    }
+
+    .feature h2{
+        font-size:52px;
+    }
+
+    .section-title h2{
+        font-size:42px;
+    }
+}
+
+@media(max-width:600px){
+    .grid{
+        grid-template-columns:1fr;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+    <div class="nav">
+        <div class="logo">Intorium</div>
+
+        <div>
+            <a href="#basic">Basic</a>
+            <a href="#blockchain">Blockchain</a>
+            <a href="#ia">IA</a>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+
+    <h1>Robots Built For Communities</h1>
+
+    <p>
+        Discover a complete ecosystem of Telegram Bots. Basic. Blockchain. IA ... Designed to power modern digital
+        communities.
+    </p>
+
+    <div class="hero-buttons">
+        <a href="#basic" class="btn btn-primary">Explore Bots</a>
+        <a href="https://github.com/Intorium" class="btn btn-secondary">GitHub</a>
+    </div>
+
+</section>
+
+<section class="section">
+
+    <div class="feature">
+
+        <div>
+            <h2>One Ecosystem.</h2>
+
+            <p>
+                Intorium combines telegram community,
+                blockchain and
+                artificial intelligence into a single collection of robots.
+            </p>
+        </div>
+
+        <img src="image/oracle.jpg" alt="">
+    </div>
+
+</section>
+
+<section id="basic" class="section">
+
+    <div class="section-title">
+        <h2>Telegram Group Bot (Basic)</h2>
+        <p>Everything your community needs.</p>
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <img src="image/oracle.jpg">
+            <div class="card-content">
+                <h3>Oracle</h3>
+                <p>Create and manage Telegraph publications directly from Telegram groups.</p>
+                <div class="price">$49</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/info.jpg">
+            <div class="card-content">
+                <h3>Info</h3>
+                <p>Translate conversations instantly between multiple languages.</p>
+                <div class="price">$39</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/clock.jpg">
+            <div class="card-content">
+                <h3>Clock</h3>
+                <p>Play chess directly inside your Telegram community.</p>
+                <div class="price">$29</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/translator.jpg">
+            <div class="card-content">
+                <h3>Translator</h3>
+                <p>Display Telegram Stars earnings in real time.</p>
+                <div class="price">$29</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/spam.jpg">
+            <div class="card-content">
+                <h3>Spam</h3>
+                <p>Display Telegram Stars earnings in real time.</p>
+                <div class="price">$29</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/star.jpg">
+            <div class="card-content">
+                <h3>Star</h3>
+                <p>Display Telegram Stars earnings in real time.</p>
+                <div class="price">$29</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/encrypt.jpg">
+            <div class="card-content">
+                <h3>Encrypt</h3>
+                <p>Display Telegram Stars earnings in real time.</p>
+                <div class="price">$29</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/decrypt.jpg">
+            <div class="card-content">
+                <h3>Decrypt</h3>
+                <p>Display Telegram Stars earnings in real time.</p>
+                <div class="price">$29</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/qrcode.jpg">
+            <div class="card-content">
+                <h3>QRCode</h3>
+                <p>Display Telegram Stars earnings in real time.</p>
+                <div class="price">$29</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/adm.jpg">
+            <div class="card-content">
+                <h3>ADM</h3>
+                <p>Display Telegram Stars earnings in real time.</p>
+                <div class="price">$29</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/telegraph.jpg">
+            <div class="card-content">
+                <h3>Telegraph</h3>
+                <p>Display Telegram Stars earnings in real time.</p>
+                <div class="price">$29</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/face.jpg">
+            <div class="card-content">
+                <h3>Face</h3>
+                <p>Display Telegram Stars earnings in real time.</p>
+                <div class="price">$29</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/user.jpg">
+            <div class="card-content">
+                <h3>User</h3>
+                <p>Display Telegram Stars earnings in real time.</p>
+                <div class="price">$29</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/chess.jpg">
+            <div class="card-content">
+                <h3>Chess</h3>
+                <p>Display Telegram Stars earnings in real time.</p>
+                <div class="price">$29</div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="blockchain" class="section dark">
+
+    <div class="section-title">
+        <h2>Telegram Group Bot (Blockchain)</h2>
+        <p>Built for Waves and Waves forks.</p>
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <img src="image/link.jpg">
+            <div class="card-content">
+                <h3>Link</h3>
+                <p>Accept payments and automate content delivery.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/ticker.jpg">
+            <div class="card-content">
+                <h3>Ticker</h3>
+                <p>Exchange assets across multiple Waves-based networks.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/shell.jpg">
+            <div class="card-content">
+                <h3>Shell</h3>
+                <p>Bridge infrastructure operated entirely through commands.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/python.jpg">
+            <div class="card-content">
+                <h3>Python</h3>
+                <p>Create NFTs for community members in seconds.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/conf.jpg">
+            <div class="card-content">
+                <h3>Conf</h3>
+                <p>Create NFTs for community members in seconds.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/node.jpg">
+            <div class="card-content">
+                <h3>Node</h3>
+                <p>Create NFTs for community members in seconds.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/ride.jpg">
+            <div class="card-content">
+                <h3>Ride</h3>
+                <p>Create NFTs for community members in seconds.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/order.jpg">
+            <div class="card-content">
+                <h3>Order</h3>
+                <p>Create NFTs for community members in seconds.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/arbitrage.jpg">
+            <div class="card-content">
+                <h3>Arbitrage</h3>
+                <p>Create NFTs for community members in seconds.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/stop-limit.jpg">
+            <div class="card-content">
+                <h3>Stop-limit</h3>
+                <p>Create NFTs for community members in seconds.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/trade.jpg">
+            <div class="card-content">
+                <h3>Trade</h3>
+                <p>Create NFTs for community members in seconds.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/trojan.jpg">
+            <div class="card-content">
+                <h3>Trojan</h3>
+                <p>Create NFTs for community members in seconds.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/distribution.jpg">
+            <div class="card-content">
+                <h3>Distribution</h3>
+                <p>Create NFTs for community members in seconds.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/orderbook.jpg">
+            <div class="card-content">
+                <h3>Orderbook</h3>
+                <p>Create NFTs for community members in seconds.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/transaction.jpg">
+            <div class="card-content">
+                <h3>Transaction</h3>
+                <p>Create NFTs for community members in seconds.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/exchange.jpg">
+            <div class="card-content">
+                <h3>Exchange</h3>
+                <p>Create NFTs for community members in seconds.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/nft.jpg">
+            <div class="card-content">
+                <h3>NFT</h3>
+                <p>Create NFTs for community members in seconds.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/payment.jpg">
+            <div class="card-content">
+                <h3>Payment</h3>
+                <p>Create NFTs for community members in seconds.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/airdrop.jpg">
+            <div class="card-content">
+                <h3>Airdrop</h3>
+                <p>Create NFTs for community members in seconds.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/tip.jpg">
+            <div class="card-content">
+                <h3>Tip</h3>
+                <p>Create NFTs for community members in seconds.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/vote.jpg">
+            <div class="card-content">
+                <h3>Vote</h3>
+                <p>Create NFTs for community members in seconds.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/gateway.jpg">
+            <div class="card-content">
+                <h3>Gateway</h3>
+                <p>Create NFTs for community members in seconds.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/swap.jpg">
+            <div class="card-content">
+                <h3>Swap</h3>
+                <p>Create NFTs for community members in seconds.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/amm.jpg">
+            <div class="card-content">
+                <h3>AMM</h3>
+                <p>Create NFTs for community members in seconds.</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="ia" class="section">
+
+    <div class="section-title">
+        <h2>Telegram Group Bot (IA)</h2>
+        <p>Professional AI chatbot and AI agent.</p>
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <img src="image/ia.jpg">
+            <div class="card-content">
+                <h3>IA</h3>
+                <p>Automated trading strategies for Waves forks.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/data.jpg">
+            <div class="card-content">
+                <h3>Data</h3>
+                <p>Advanced algorithmic trading automation.</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <p>
+        © 2026 Intorium. BOT | Blockchain | IA. Buy and Support: <a href="https://t.me/data_314_bot">Data</a>
+    </p>
+
+</footer>
+
+</body>
+</html>
